@@ -8,13 +8,14 @@ document.getElementById('leadForm').addEventListener('submit', function(event) {
     // Save lead information (you can send it to your backend here)
     console.log(`Lead captured: ${name}, ${email}`);
 
-    // Send the data to the backend
-    fetch('https://sjblair.pythonanywhere.com', {
+
+    // Send the data to the backend as JSON
+    fetch('/optin', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/json' // Set content type to JSON
         },
-        body: new URLSearchParams({
+        body: JSON.stringify({
             'name': name,
             'email': email
         })
@@ -26,9 +27,8 @@ document.getElementById('leadForm').addEventListener('submit', function(event) {
         return response.json();
     })
     .then(data => {
-        console.log(data.message); // Log the success message
-        // Display the random tarot reading
-        displayRandomReading(name); // Call the function to display reading
+        console.log(data.message); // Show success message returned from backend
+        // Optionally provide user feedback in the UI here
     })
     .catch(error => console.error('Error:', error));
 });
