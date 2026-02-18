@@ -207,6 +207,6 @@ const randomReading = readings[Math.floor(Math.random() * readings.length)];
     readingDiv.classList.remove('hidden');
 
     // Clear the form
-    document.getElementById('leadForm').reset();
+    document.getElementById('leadForm').reset(),
 }),
 
