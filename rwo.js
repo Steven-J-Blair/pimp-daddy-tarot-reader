@@ -209,6 +209,6 @@ document.getElementById('readingText').innerText = ` Today's card is: ${randomRe
     readingDiv.classList.remove('hidden');
 
     // Optionally clear the form
-    document.getElementById('leadForm').reset(),
-}),
+    document.getElementById('leadForm').reset();
+];
 
