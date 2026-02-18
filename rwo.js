@@ -210,5 +210,6 @@ document.getElementById('readingText').innerText = ` Today's card is: ${randomRe
 
     // Optionally clear the form
     document.getElementById('leadForm').reset();
-,
+}
+
 
