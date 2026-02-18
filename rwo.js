@@ -33,24 +33,6 @@ document.getElementById('leadForm').addEventListener('submit', function(event) {
     .catch(error => console.error('Error:', error));
 });
 
-// Function to display a random tarot reading
-function displayRandomReading(name) {
-    const randomReading = readings[Math.floor(Math.random() * readings.length)];
-    const cardName = randomReading.split(":")[0];
-
-    // Update the card image and reading text
-    document.getElementById('cardImage').src = cardImages[cardName];
-    document.getElementById('greetingText').innerText = `Hello, ${name}!`;
-    document.getElementById('readingText').innerText = `Today's card is: ${randomReading}`;
-
-    // Show the reading section
-    const readingDiv = document.getElementById('reading');
-    readingDiv.classList.remove('hidden');
-
-    // Optionally clear the form
-    document.getElementById('leadForm').reset();
-}
-
 const cardImages = {
     "The Fool": "images/cardmock.png",
     "The Magician": "images/cardmock.png",
@@ -214,5 +196,21 @@ const readings = [
     "King of Pentacles: Financial success and stability are within reach."
 ];
 
+// Function to display a random tarot reading
+function displayRandomReading(name) {
+    const randomReading = readings[Math.floor(Math.random() * readings.length)];
+    const cardName = randomReading.split(":")[0];
 
+    // Update the card image and reading text
+    document.getElementById('cardImage').src = cardImages[cardName];
+    document.getElementById('greetingText').innerText = `Hello, ${name}!`;
+    document.getElementById('readingText').innerText = `Today's card is: ${randomReading}`;
+
+    // Show the reading section
+    const readingDiv = document.getElementById('reading');
+    readingDiv.classList.remove('hidden');
+
+    // Optionally clear the form
+    document.getElementById('leadForm').reset();
+}
 
