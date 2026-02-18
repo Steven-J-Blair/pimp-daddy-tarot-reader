@@ -7,17 +7,6 @@ document.getElementById('leadForm').addEventListener('submit', function(event) {
 
     // Save lead information (you can send it to your backend here)
     console.log(`Lead captured: ${name}, ${email}`);
-    
-const randomReading = readings[Math.floor(Math.random() * readings.length)];
-    const cardName = randomReading.split(":")[0];
-    
-    // Update the card image and reading text
-    document.getElementById('cardImage').src = cardImages[cardName];
-    document.getElementById('readingText').innerText = `${name}, your tarot reading is: ${randomReading}`;
-    
-    // Show the reading section
-    const readingDiv = document.getElementById('reading');
-    readingDiv.classList.remove('hidden');
 
     // Send the data to the backend as JSON
     fetch('/optin', {
@@ -42,17 +31,6 @@ const randomReading = readings[Math.floor(Math.random() * readings.length)];
     })
     .catch(error => console.error('Error:', error));
 });
-
-const randomReading = readings[Math.floor(Math.random() * readings.length)];
-    const cardName = randomReading.split(":")[0];
-    
-    // Update the card image and reading text
-    document.getElementById('cardImage').src = cardImages[cardName];
-    document.getElementById('readingText').innerText = `${name}, your tarot reading is: ${randomReading}`;
-    
-    // Show the reading section
-    const readingDiv = document.getElementById('reading');
-    readingDiv.classList.remove('hidden');
 
 const cardImages = {
     "The Fool": "images/cardmock.png",
@@ -217,7 +195,18 @@ const readings = [
     "King of Pentacles: Financial success and stability are within reach."
 ];
 
+const randomReading = readings[Math.floor(Math.random() * readings.length)];
+    const cardName = randomReading.split(":")[0];
+    
+    // Update the card image and reading text
+    document.getElementById('cardImage').src = cardImages[cardName];
+    document.getElementById('readingText').innerText = `${name}, your tarot reading is: ${randomReading}`;
+    
+    // Show the reading section
+    const readingDiv = document.getElementById('reading');
+    readingDiv.classList.remove('hidden');
+
     // Clear the form
     document.getElementById('leadForm').reset();
-}
+}),
 
