@@ -175,7 +175,7 @@ const readings = [
     const cardName = randomReading.split(":")[0];
     // Update the card image and reading text
     document.getElementById('cardImage').src = cardImages[cardName];
-    document.getElementById('greetingText').innerText = `Hello, ${name}: ${randomReading}`;
+    document.getElementById('greetingText').innerText = `Hello, ${name}: ${greetingText}`;
     document.getElementById('readingText').innerText = `Today's card is: ${randomReading}`;
     // Show the reading section
     const readingDiv = document.getElementById('reading');
