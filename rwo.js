@@ -33,6 +33,11 @@ document.getElementById('leadForm').addEventListener('submit', function(event) {
     .catch(error => console.error('Error:', error));
 });
 
+// Function to display a random tarot reading
+function displayRandomReading(name) {
+    const randomReading = readings[Math.floor(Math.random() * readings.length)];
+    const cardName = randomReading.split(":")[0];
+
 const cardImages = {
     "The Fool": "images/cardmock.png",
     "The Magician": "images/cardmock.png",
@@ -195,11 +200,6 @@ const readings = [
     "Queen of Pentacles: Nurturing and practicality complement your approach.",
     "King of Pentacles: Financial success and stability are within reach."
 ];
-
-// Function to display a random tarot reading
-function displayRandomReading(name) {
-    const randomReading = readings[Math.floor(Math.random() * readings.length)];
-    const cardName = randomReading.split(":")[0];
 
     // Update the card image and reading text
     document.getElementById('cardImage').src = cardImages[cardName];
