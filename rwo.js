@@ -8,30 +8,6 @@ document.getElementById('leadForm').addEventListener('submit', function(event) {
     // Save lead information (you can send it to your backend here)
     console.log(`Lead captured: ${name}, ${email}`);
 
-    // Send the data to the backend as JSON
-    fetch('/optin', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json' // Set content type to JSON
-        },
-        body: JSON.stringify({
-            'name': name,
-            'email': email
-        })
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log(data.message); // Show success message returned from backend
-        // Optionally provide user feedback in the UI here
-    })
-    .catch(error => console.error('Error:', error));
-});
-
 const cardImages = {
     "The Fool": "images/cardmock.png",
     "The Magician": "images/cardmock.png",
@@ -195,18 +171,40 @@ const readings = [
     "King of Pentacles: Financial success and stability are within reach."
 ];
 
-const randomReading = readings[Math.floor(Math.random() * readings.length)];
+    const randomReading = readings[Math.floor(Math.random() * readings.length)];
     const cardName = randomReading.split(":")[0];
-    
     // Update the card image and reading text
     document.getElementById('cardImage').src = cardImages[cardName];
-    document.getElementById('readingText').innerText = `${name}, your tarot reading is: ${randomReading}`;
-    
+    document.getElementById('greetingText').innerText = `Hello, ${name}: ${randomReading}`;
+    document.getElementById('readingText').innerText = `Today's card is: ${randomReading}`;
     // Show the reading section
     const readingDiv = document.getElementById('reading');
     readingDiv.classList.remove('hidden');
 
     // Clear the form
     document.getElementById('leadForm').reset();
-}
+    
+// Send the data to the backend as JSON
+    fetch('/optin', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json' // Set content type to JSON
+        },
+        body: JSON.stringify({
+            'name': name,
+            'email': email
+        })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data.message); // Show success message returned from backend
+        // Optionally provide user feedback in the UI here
+    })
+    .catch(error => console.error('Error:', error));
+});
 
