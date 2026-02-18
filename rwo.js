@@ -172,7 +172,7 @@ document.getElementById('leadForm').addEventListener('submit', function(event) {
     console.log(`Lead captured: ${name}, ${email}`);
 
     // Send the data to the backend
-    fetch('https://www.pythonanywhere.com/user/sjblair/files/home/sjblair/optin.py', {
+    fetch('https://sjblair.pythonanywhere.com', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
