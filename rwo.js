@@ -185,12 +185,12 @@ const readings = [
     document.getElementById('leadForm').reset();
     
 // Send the data to the backend as JSON
-    fetch('/optin', {
+    fetch('https://sjblair.pythonanywhere.com/optin', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json' // Set content type to JSON
         },
-        body: JSON.stringify({
+        body: JSON.stringify(data){
             'name': name,
             'email': email
         })
