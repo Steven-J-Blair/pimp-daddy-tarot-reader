@@ -184,27 +184,27 @@ const readings = [
     // Clear the form
     document.getElementById('leadForm').reset();
     
-// Send the data to the backend as JSON
-    fetch('https://sjblair.pythonanywhere.com/optin', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json' // Set content type to JSON
-        },
-        body: JSON.stringify(data){
-            'name': name,
-            'email': email
-        })
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log(data.message); // Show success message returned from backend
-        // Optionally provide user feedback in the UI here
-    })
-    .catch(error => console.error('Error:', error));
-});
+    // Send the data to the backend as JSON
+fetch('https://sjblair.pythonanywhere.com/optin', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json' // Set content type to JSON
+    },
+    body: JSON.stringify({
+        'name': name,
+        'email': email
+    }) // Correctly format this
+})
+.then(response => {
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    return response.json();
+})
+.then(data => {
+    console.log(data.message); // Show success message returned from backend
+    // Optionally provide user feedback in the UI here
+})
+.catch(error => console.error('Error:', error));
+
 
