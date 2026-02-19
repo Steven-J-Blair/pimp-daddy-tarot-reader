@@ -1,5 +1,5 @@
 // Add an event listener to the lead form submit action
-document.getElementById('leadForm').addEventListener('submit', function(event) {
+document.getElementById('leadForm').addEventListener('submit', function(event) }
     event.preventDefault();
 
     const name = document.getElementById('name').value;
@@ -208,3 +208,4 @@ fetch('https://sjblair.pythonanywhere.com/optin', {
 .catch(error => console.error('Error:', error));
 
 
+}
