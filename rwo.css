@@ -78,6 +78,12 @@ button2 {
     transition: background-color 0.3s; /* Smooth transition*/
 }
 
+footer {
+    background: #000; /* or your preferred background color */
+    color: #fff; /* or your preferred text color */
+    text-align: center;
+    padding: 10px 0;
+}
 button2:hover {
     background-color: #2d062d; /* Darker shade on hover */
 }
