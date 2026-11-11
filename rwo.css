@@ -100,10 +100,14 @@ button2:hover {
 }
 
 footer {
-    background: ; /* or your preferred background color */
     color: #000; /* or your preferred text color */
+    position: static;
+    width: 100%;
+    margin: 24px auto 0;
     text-align: center;
-    padding: 10px 0;
+    padding: 16px 0;
+    clear: both;
+    font: xsmall;
 }    
 
 
