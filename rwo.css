@@ -101,7 +101,6 @@ button2:hover {
 
 footer {
     color: #000; /* or your preferred text color */
-    display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
