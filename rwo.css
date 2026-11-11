@@ -99,9 +99,9 @@ button2:hover {
   cursor: pointer;
 }
 
-footer {
+.footer {
     color: #000; /* or your preferred text color */
-    position: bottom;
+    position: static;
     text-align: center;
     justify-content: center;
     align-items: center;
