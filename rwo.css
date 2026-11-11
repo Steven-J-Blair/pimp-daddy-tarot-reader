@@ -82,7 +82,7 @@ button2:hover {
     background-color: #2d062d; /* Darker shade on hover */
 }
 
-.pdlp-button {
+pdlp-button {
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -99,9 +99,8 @@ button2:hover {
   cursor: pointer;
 }
 
-.footer {
+footer {
     color: #000; /* or your preferred text color */
-    position: static;
     text-align: center;
     justify-content: center;
     align-items: center;
